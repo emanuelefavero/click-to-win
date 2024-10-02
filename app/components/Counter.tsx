@@ -71,7 +71,7 @@ export default function Counter() {
       )}
 
       {!isSignedIn && (
-        <SignInButton>
+        <SignInButton mode='redirect'>
           <button className='text-2xl mt-2 w-full py-2 select-none'>
             Sign In
           </button>
