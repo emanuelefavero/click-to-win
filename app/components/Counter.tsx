@@ -1,15 +1,31 @@
 'use client'
 
+import { useState } from 'react'
 import data from '@/data/count.json'
 import { incrementCount } from '@/app/actions'
 
 export default function Counter() {
-  const count = data.count
+  const [count, setCount] = useState(data.count)
 
   const digits = count.toString().split('').map(Number)
 
   const handleClick = async () => {
-    await incrementCount(count)
+    const newCount = count + 1
+
+    setCount(newCount)
+
+    // Reset count to 0 if it reaches 100
+    if (newCount === 100) {
+      alert('Congratulations! You reached 100!')
+      setCount(0)
+      await incrementCount(0)
+      return
+    }
+
+    // Make a server call only every 10 counts
+    if (newCount % 10 === 0) {
+      await incrementCount(newCount)
+    }
   }
 
   return (
