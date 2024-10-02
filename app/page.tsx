@@ -1,19 +1,14 @@
-import { SignInButton, SignedIn, SignedOut } from '@clerk/nextjs'
 import Header from '@/app/components/Header'
 import Counter from '@/app/components/Counter'
+import Main from '@/app/components/Main'
 
 export default function Home() {
   return (
     <>
-      <SignedOut>
-        <SignInButton />
-      </SignedOut>
-      <SignedIn>
+      <Main>
         <Header />
-        <main className='flex justify-center items-center'>
-          <Counter />
-        </main>
-      </SignedIn>
+        <Counter />
+      </Main>
     </>
   )
 }

@@ -3,8 +3,11 @@
 import { useState } from 'react'
 import data from '@/data/count.json'
 import { incrementCount } from '@/app/actions'
+import { useUser } from '@clerk/clerk-react'
+import { SignInButton } from '@clerk/nextjs'
 
 export default function Counter() {
+  const { isSignedIn } = useUser()
   const [count, setCount] = useState(data.count)
 
   const digits = count.toString().split('').map(Number)
@@ -57,12 +60,23 @@ export default function Counter() {
           </div>
         ))}
       </div>
-      <button
-        className='text-2xl mt-2 w-full py-2 select-none'
-        onClick={handleClick}
-      >
-        Play
-      </button>
+
+      {isSignedIn && (
+        <button
+          className='text-2xl mt-2 w-full py-2 select-none'
+          onClick={handleClick}
+        >
+          Play
+        </button>
+      )}
+
+      {!isSignedIn && (
+        <SignInButton>
+          <button className='text-2xl mt-2 w-full py-2 select-none'>
+            Sign In
+          </button>
+        </SignInButton>
+      )}
     </div>
   )
 }
