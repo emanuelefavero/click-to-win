@@ -5,6 +5,7 @@ import data from '@/data/count.json'
 import { incrementCount } from '@/app/actions'
 import { useUser } from '@clerk/clerk-react'
 import { SignInButton } from '@clerk/nextjs'
+import Button from '@/app/components/Button'
 
 export default function Counter() {
   const { isSignedIn } = useUser()
@@ -61,20 +62,11 @@ export default function Counter() {
         ))}
       </div>
 
-      {isSignedIn && (
-        <button
-          className='text-2xl mt-2 w-full py-2 select-none'
-          onClick={handleClick}
-        >
-          Play
-        </button>
-      )}
+      {isSignedIn && <Button onClick={handleClick}>Play</Button>}
 
       {!isSignedIn && (
         <SignInButton mode='redirect'>
-          <button className='text-2xl mt-2 w-full py-2 select-none'>
-            Sign In
-          </button>
+          <Button>Sign in to play</Button>
         </SignInButton>
       )}
     </div>
