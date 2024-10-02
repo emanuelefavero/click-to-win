@@ -1,0 +1,40 @@
+.counter-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.counter {
+  display: flex;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.digit-container {
+  width: 40px;
+  height: 60px;
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+}
+
+.digit-scroller {
+  transition: transform 0.5s ease-in-out;
+  position: absolute;
+  top: 0;
+}
+
+.digit {
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.increment-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}

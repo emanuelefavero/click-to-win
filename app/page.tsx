@@ -1,5 +1,6 @@
 import { SignInButton, SignedIn, SignedOut } from '@clerk/nextjs'
-import Header from './components/Header'
+import Header from '@/app/components/Header'
+import Counter from '@/app/components/Counter'
 
 export default function Home() {
   return (
@@ -9,6 +10,9 @@ export default function Home() {
       </SignedOut>
       <SignedIn>
         <Header />
+        <main className='flex justify-center items-center'>
+          <Counter />
+        </main>
       </SignedIn>
     </>
   )
