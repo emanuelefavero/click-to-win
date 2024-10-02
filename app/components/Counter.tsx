@@ -46,7 +46,10 @@ export default function Counter() {
             >
               {/* Render numbers 0-9 to scroll through */}
               {Array.from({ length: 10 }, (_, i) => (
-                <div key={i} className='h-16 flex justify-center items-center'>
+                <div
+                  key={i}
+                  className='h-16 flex justify-center items-center select-none'
+                >
                   {i}
                 </div>
               ))}
@@ -54,7 +57,10 @@ export default function Counter() {
           </div>
         ))}
       </div>
-      <button className='text-2xl mt-2 w-full py-2' onClick={handleClick}>
+      <button
+        className='text-2xl mt-2 w-full py-2 select-none'
+        onClick={handleClick}
+      >
         Play
       </button>
     </div>
