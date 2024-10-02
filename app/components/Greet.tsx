@@ -4,8 +4,8 @@ export default async function Greet() {
   const user = await currentUser()
 
   return (
-    <span className='ml-3 font-semibold select-none'>
-      {user ? `Hello, ${user.firstName}` : ''}
-    </span>
+    <h1 className='ml-3 font-semibold select-none text-base'>
+      {user ? `Hello, ${user.firstName}` : 'Click to Win!'}
+    </h1>
   )
 }
