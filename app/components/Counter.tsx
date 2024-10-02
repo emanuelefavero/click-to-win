@@ -16,6 +16,9 @@ export default function Counter() {
 
     // Reset count to 0 if it reaches 100
     if (newCount === 100) {
+      // Add a timeout before showing the alert
+      await new Promise((resolve) => setTimeout(resolve, 50))
+
       alert('Congratulations! You reached 100!')
       setCount(0)
       await incrementCount(0)
