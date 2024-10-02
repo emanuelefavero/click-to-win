@@ -1,15 +1,15 @@
 'use client'
 
-import { useState } from 'react'
+import data from '@/data/count.json'
+import { incrementCount } from '@/app/actions'
 
 export default function Counter() {
-  const [count, setCount] = useState(1)
+  const count = data.count
 
-  // Convert number to array of digits
   const digits = count.toString().split('').map(Number)
 
-  const handleClick = () => {
-    setCount((prevCount) => prevCount + 1)
+  const handleClick = async () => {
+    await incrementCount(count)
   }
 
   return (
