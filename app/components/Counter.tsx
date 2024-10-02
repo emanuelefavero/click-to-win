@@ -1,6 +1,5 @@
 'use client'
 
-import { useState } from 'react'
 import data from '@/data/count.json'
 import { incrementCount } from '@/app/actions'
 import { useUser } from '@clerk/clerk-react'
@@ -9,30 +8,25 @@ import Button from '@/app/components/Button'
 
 export default function Counter() {
   const { isSignedIn } = useUser()
-  const [count, setCount] = useState(data.count)
+  const count = data.count
 
   const digits = count.toString().split('').map(Number)
 
   const handleClick = async () => {
     const newCount = count + 1
 
-    setCount(newCount)
-
     // Reset count to 0 if it reaches 100
     if (newCount === 100) {
+      await incrementCount(100)
       // Add a timeout before showing the alert
-      await new Promise((resolve) => setTimeout(resolve, 50))
+      await new Promise((resolve) => setTimeout(resolve, 100))
 
       alert('Congratulations! You reached 100!')
-      setCount(0)
       await incrementCount(0)
       return
     }
 
-    // Make a server call only every 10 counts
-    if (newCount % 10 === 0) {
-      await incrementCount(newCount)
-    }
+    await incrementCount(newCount)
   }
 
   return (
