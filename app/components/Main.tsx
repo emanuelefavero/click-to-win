@@ -1,8 +1,13 @@
 import { ReactNode } from 'react'
 
-export default function Main({ children }: { children: ReactNode }) {
+interface Props {
+  children: ReactNode
+  className?: string
+}
+
+export default function Main({ children, className }: Props) {
   return (
-    <main className='flex justify-center items-center flex-col'>
+    <main className={`flex justify-center items-center flex-col ${className}`}>
       {children}
     </main>
   )
