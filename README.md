@@ -14,3 +14,7 @@ A click to win game built with Next.js and Clerk authentication where you have t
 - [Next.js](https://nextjs.org/)
 - [Clerk](https://clerk.com/nextjs-authentication)
 - [Tailwind CSS](https://tailwindcss.com/)
+
+## License
+
+- [MIT](LICENSE.md)
