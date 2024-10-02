@@ -19,12 +19,7 @@ export default async function Header() {
         </>
       )}
 
-      {!user && (
-        <>
-          👆
-          <Greet />
-        </>
-      )}
+      {!user && <Greet />}
     </header>
   )
 }
