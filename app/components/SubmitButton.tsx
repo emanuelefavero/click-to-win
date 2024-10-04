@@ -5,7 +5,7 @@ import { useFormStatus } from 'react-dom'
 import Spinner from '@/app/components/svg/Spinner'
 
 interface Props {
-  children: ReactNode
+  children?: ReactNode
   className?: string
   onClick?: () => void
 }
@@ -22,7 +22,7 @@ export default function SubmitButton({ children, className, onClick }: Props) {
       onClick={onClick}
       disabled={pending}
     >
-      {pending ? <Spinner /> : children}
+      {pending ? <Spinner /> : children || ''}
     </button>
   )
 }
