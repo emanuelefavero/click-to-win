@@ -7,6 +7,7 @@ export default function Home() {
     <>
       <Main>
         <Header />
+
         <Counter />
       </Main>
     </>
