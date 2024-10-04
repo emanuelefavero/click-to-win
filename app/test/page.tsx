@@ -4,7 +4,9 @@ import Counter from '@/models/Counter'
 
 async function getCount() {
   await connectDB()
+
   const counter = await Counter.findOne()
+
   return counter.count
 }
 

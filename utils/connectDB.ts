@@ -9,7 +9,7 @@ if (!MONGODB_URI) {
 const connectDB = async () => {
   try {
     mongoose.set('strictQuery', false)
-    mongoose.connect(MONGODB_URI)
+    await mongoose.connect(MONGODB_URI)
   } catch (error) {
     console.error(error)
   }
