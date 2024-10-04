@@ -10,7 +10,7 @@ interface Props {
   onClick?: () => void
 }
 
-export default function SubmitButton({ children, className, onClick }: Props) {
+export default function Component({ children, className, onClick }: Props) {
   const { pending } = useFormStatus()
 
   return (

@@ -2,7 +2,7 @@ interface Props {
   className?: string
 }
 
-export default function Spinner({ className }: Props) {
+export default function Component({ className }: Props) {
   return (
     <svg
       aria-hidden='true'

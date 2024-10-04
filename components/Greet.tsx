@@ -1,6 +1,6 @@
 import { currentUser } from '@clerk/nextjs/server'
 
-export default async function Greet() {
+export default async function Component() {
   const user = await currentUser()
 
   return (
