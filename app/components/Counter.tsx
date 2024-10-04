@@ -4,6 +4,7 @@ import { incrementCount } from '@/app/actions'
 import connectDB from '@/utils/connectDB'
 import Counter from '@/models/Counter'
 import Button from '@/app/components/Button'
+import SubmitButton from '@/app/components/SubmitButton'
 
 async function getCount() {
   await connectDB()
@@ -46,7 +47,7 @@ export default async function Component() {
 
       {user && (
         <form action={incrementCount}>
-          <Button type='submit'>Play</Button>
+          <SubmitButton>Play</SubmitButton>
         </form>
       )}
 
