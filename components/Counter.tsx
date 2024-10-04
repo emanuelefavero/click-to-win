@@ -1,16 +1,9 @@
 import { currentUser } from '@clerk/nextjs/server'
 import { SignInButton } from '@clerk/nextjs'
 import { incrementCount } from '@/app/actions'
-import connectDB from '@/utils/connectDB'
-import Counter from '@/models/Counter'
+import { getCount } from '@/utils/getCount'
 import Button from '@/components/Button'
 import SubmitButton from '@/components/SubmitButton'
-
-async function getCount() {
-  await connectDB()
-  const counter = await Counter.findOne()
-  return counter.count
-}
 
 export default async function Component() {
   const user = await currentUser()
