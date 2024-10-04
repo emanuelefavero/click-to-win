@@ -19,6 +19,6 @@ export async function incrementCount() {
 
   await counter.save()
 
-  revalidatePath('/test')
-  redirect('/test')
+  revalidatePath('/')
+  redirect('/')
 }

@@ -1,38 +1,26 @@
-'use client'
-
-import data from '@/data/count.json'
-import { incrementCount } from '@/app/actions'
-import { useUser } from '@clerk/clerk-react'
+import { currentUser } from '@clerk/nextjs/server'
 import { SignInButton } from '@clerk/nextjs'
+import { incrementCount } from '@/app/actions'
+import connectDB from '@/utils/connectDB'
+import Counter from '@/models/Counter'
 import Button from '@/app/components/Button'
 
-export default function Counter() {
-  const { isSignedIn } = useUser()
-  const count = data.count
+async function getCount() {
+  await connectDB()
+  const counter = await Counter.findOne()
+  return counter.count
+}
+
+export default async function Component() {
+  const user = await currentUser()
+  const count = await getCount()
 
   const digits = count.toString().split('').map(Number)
-
-  const handleClick = async () => {
-    const newCount = count + 1
-
-    // Reset count to 0 if it reaches 100
-    if (newCount === 100) {
-      await incrementCount(100)
-      // Add a timeout before showing the alert
-      await new Promise((resolve) => setTimeout(resolve, 100))
-
-      alert('Congratulations! You reached 100!')
-      await incrementCount(0)
-      return
-    }
-
-    await incrementCount(newCount)
-  }
 
   return (
     <div className='flex flex-col items-center'>
       <div className='flex text-5xl font-bold'>
-        {digits.map((digit, index) => (
+        {digits.map((digit: number, index: number) => (
           <div
             key={index}
             className='w-10 h-16 overflow-hidden relative inline-block'
@@ -56,9 +44,13 @@ export default function Counter() {
         ))}
       </div>
 
-      {isSignedIn && <Button onClick={handleClick}>Play</Button>}
+      {user && (
+        <form action={incrementCount}>
+          <Button type='submit'>Play</Button>
+        </form>
+      )}
 
-      {!isSignedIn && (
+      {!user && (
         <SignInButton mode='redirect'>
           <Button>Sign in to play</Button>
         </SignInButton>
