@@ -4,12 +4,9 @@ import Main from '@/components/Main'
 
 export default function Home() {
   return (
-    <>
-      <Main>
-        <Header />
-
-        <Counter />
-      </Main>
-    </>
+    <Main>
+      <Header />
+      <Counter />
+    </Main>
   )
 }
