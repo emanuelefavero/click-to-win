@@ -1,9 +1,15 @@
-import { serverURL } from '@/utils/serverURL'
 import { incrementCount } from '@/app/actions'
+import connectDB from '@/utils/connectDB'
+import Counter from '@/models/Counter'
+
+async function getCount() {
+  await connectDB()
+  const counter = await Counter.findOne()
+  return counter.count
+}
 
 export default async function Page() {
-  const response = await fetch(`${serverURL}/api/counter`)
-  const { count } = await response.json()
+  const count = await getCount()
 
   return (
     <div>
