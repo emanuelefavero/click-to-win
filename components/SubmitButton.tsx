@@ -2,7 +2,7 @@
 
 import { ReactNode } from 'react'
 import { useFormStatus } from 'react-dom'
-import Spinner from '@/app/components/svg/Spinner'
+import Spinner from '@/components/svg/Spinner'
 
 interface Props {
   children?: ReactNode

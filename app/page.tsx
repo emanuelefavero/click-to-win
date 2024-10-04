@@ -1,6 +1,6 @@
-import Header from '@/app/components/Header'
-import Counter from '@/app/components/Counter'
-import Main from '@/app/components/Main'
+import Header from '@/components/Header'
+import Counter from '@/components/Counter'
+import Main from '@/components/Main'
 
 export default function Home() {
   return (

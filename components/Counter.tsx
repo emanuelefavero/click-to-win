@@ -3,8 +3,8 @@ import { SignInButton } from '@clerk/nextjs'
 import { incrementCount } from '@/app/actions'
 import connectDB from '@/utils/connectDB'
 import Counter from '@/models/Counter'
-import Button from '@/app/components/Button'
-import SubmitButton from '@/app/components/SubmitButton'
+import Button from '@/components/Button'
+import SubmitButton from '@/components/SubmitButton'
 
 async function getCount() {
   await connectDB()
