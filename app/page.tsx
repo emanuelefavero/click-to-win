@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import Header from '@/components/Header'
 import Counter from '@/components/Counter'
 import Main from '@/components/Main'
@@ -17,8 +16,6 @@ export default function Home({ searchParams }: SearchParamProps) {
       <Main>
         <Counter />
       </Main>
-
-      <Link href='/?win=true'>Open Win Modal</Link>
 
       {win && <Modal />}
     </>

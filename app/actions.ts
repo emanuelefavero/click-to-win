@@ -11,14 +11,19 @@ export async function incrementCount() {
 
   const counter = await Counter.findOne()
 
-  if (counter.count === 100) {
+  if (counter.count === 99) {
     counter.count = 0
+
+    await counter.save()
+
+    revalidatePath('/')
+    redirect('/?win=true') // open the win modal
   } else {
     counter.count++
+
+    await counter.save()
+
+    revalidatePath('/')
+    redirect('/')
   }
-
-  await counter.save()
-
-  revalidatePath('/')
-  redirect('/')
 }
