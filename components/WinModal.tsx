@@ -14,15 +14,18 @@ export default async function Component() {
           {user && `, ${user.firstName}`}! 🎉
         </h2>
 
-        <p className='mb-3 text-slate-400'>
+        <p className='mb-3 text-slate-600 dark:text-slate-400'>
           You are the first to reach{' '}
-          <span className='font-bold text-white'>100</span>! 🏆
+          <span className='font-bold text-slate-600 dark:text-slate-300'>
+            100
+          </span>
+          ! 🏆
         </p>
 
-        <p className='mb-3 text-slate-400'>
+        <p className='mb-3 text-slate-600 dark:text-slate-400'>
           Please check your{' '}
           {user && (
-            <span className='font-bold text-white'>
+            <span className='font-bold text-slate-600 dark:text-slate-300'>
               {user.primaryEmailAddress?.emailAddress}
             </span>
           )}{' '}
