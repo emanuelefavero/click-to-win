@@ -1,8 +1,6 @@
 import Link from 'next/link'
 import { currentUser } from '@clerk/nextjs/server'
 
-// TODO: Add name and email of winner (use Clerk server side utilities) (also ask ChatGPT to help you crate the text for the modal)
-
 export default async function Component() {
   const user = await currentUser()
 
