@@ -10,6 +10,19 @@
   justify-content: center;
   align-items: center;
   z-index: 999;
+  overflow: hidden;
+}
+
+/* Slide from the top animation */
+@keyframes slideFromTop {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 /* Card-like modal content */
@@ -23,4 +36,7 @@
   max-width: 90%;
   text-align: center;
   position: relative;
+
+  /* Apply the animation */
+  animation: slideFromTop 0.5s ease-out;
 }
