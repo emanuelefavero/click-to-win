@@ -31,7 +31,7 @@ export default async function Component() {
         </p>
 
         <Link href='/' className='text-2xl select-none'>
-          Close
+          Play again
         </Link>
       </div>
     </div>
