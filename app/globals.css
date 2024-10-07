@@ -8,6 +8,7 @@
   --primary: #22c55e;
   --primary-muted: #dcfce7;
   --primary-hover: #16a34a;
+  --primary-active: #4ade80;
   --selection: rgba(34, 197, 94, 0.2);
   --button-text: var(--primary);
 }
@@ -81,6 +82,11 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+a:active {
+  color: var(--primary-active);
+  transition: color 0.2s;
 }
 
 button,
