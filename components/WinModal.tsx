@@ -5,8 +5,8 @@ export default async function Component() {
   const user = await currentUser()
 
   return (
-    <div className='fixed top-0 left-0 w-full h-full bg-white/50 dark:bg-black/50 backdrop-blur-sm flex justify-center items-center z-50 p-4 overflow-auto'>
-      <div className='bg-[#f0f9ff] dark:bg-[#030816] border border-slate-400 dark:border-slate-600 rounded-lg shadow-md shadow-slate-200 dark:shadow-black px-5 py-6 text-center relative max-w-md animate-slideFromTop'>
+    <div className='fixed top-0 left-0 w-full h-full bg-white/50 dark:bg-black/50 backdrop-blur-sm flex justify-center items-center z-50 p-10 overflow-auto'>
+      <div className='bg-[#f0f9ff] dark:bg-[#030816] border border-slate-400 dark:border-slate-600 rounded-lg shadow-md shadow-slate-200 dark:shadow-black px-4 py-5 text-center relative max-w-lg animate-slideFromTop'>
         <h2 className='text-2xl mb-5'>
           Congratulations
           {user && `, ${user.firstName}`}! 🎉
