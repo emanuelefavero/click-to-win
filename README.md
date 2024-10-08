@@ -1,8 +1,20 @@
 # Click to Win
 
-A click to win game built with Next.js and Clerk authentication where you have to click on the button to win
+A click to win game built with Next.js, Clerk authentication and MongoDB where the first person to reach 100 clicks across all users wins.
 
-## Getting Started
+## Website
+
+- [Click to Win](https://click-to-win-coral.vercel.app/)
+
+## How to Play
+
+- Sign up or log in
+- Click the button to increase your click count
+- The first person to reach 100 clicks wins
+- The winner gets a prize
+- The game resets after a winner is declared
+
+## Development
 
 - Clone the repository
 - Install dependencies with `npm install`
@@ -13,6 +25,8 @@ A click to win game built with Next.js and Clerk authentication where you have t
 
 - [Next.js](https://nextjs.org/)
 - [Clerk](https://clerk.com/nextjs-authentication)
+- [MongoDB](https://www.mongodb.com/)
+- [MongoDB Atlas](https://www.mongodb.com/products/platform/atlas-database)
 - [Tailwind CSS](https://tailwindcss.com/)
 
 ## License
