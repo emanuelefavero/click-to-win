@@ -9,7 +9,7 @@ export default async function Component() {
 
   return (
     <header className='w-full flex items-center justify-between mb-16'>
-      <Logo />
+      <Logo width={33} height={33} />
 
       {user && (
         <span className='flex items-center'>
