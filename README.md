@@ -6,6 +6,10 @@ A click to win game built with Next.js, Clerk authentication and MongoDB where t
 
 - [Click to Win](https://click-to-win-coral.vercel.app/)
 
+#### Mockup
+
+![mockup](./mockup.jpeg 'mockup')
+
 ## How to Play
 
 - Sign up or log in
