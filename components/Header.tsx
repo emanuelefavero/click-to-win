@@ -3,8 +3,8 @@ import { dark } from '@clerk/themes'
 import Greet from '@/components/Greet'
 import { currentUser } from '@clerk/nextjs/server'
 import { refreshHomePage } from '@/app/actions'
-import Logo from './Logo'
-import InvisibleButton from './InvisibleButton'
+import Logo from '@/components/Logo'
+import InvisibleButton from '@/components/InvisibleButton'
 
 export default async function Component() {
   const user = await currentUser()
