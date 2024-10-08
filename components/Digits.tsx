@@ -4,7 +4,7 @@ interface Props {
 
 export default async function Component({ digits }: Props) {
   return (
-    <div className='flex text-5xl font-bold'>
+    <div className='flex text-5xl font-bold mb-1'>
       {digits.map((digit: number, index: number) => (
         <div
           key={index}

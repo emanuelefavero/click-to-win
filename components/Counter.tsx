@@ -18,7 +18,9 @@ export default async function Component() {
 
       {user && (
         <form action={incrementCount}>
-          <SubmitButton>Play</SubmitButton>
+          <SubmitButton className='dark:text-green-100 hover:text-green-100 animate-littleBounce'>
+            <span className='animate-littleBounceDelayed'>Play</span>
+          </SubmitButton>
         </form>
       )}
 

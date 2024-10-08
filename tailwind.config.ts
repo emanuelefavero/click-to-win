@@ -31,10 +31,21 @@ const config: Config = {
             opacity: '1',
           },
         },
+
+        littleBounce: {
+          '0%, 100%': {
+            transform: 'translateY(1px)',
+          },
+          '50%': {
+            transform: 'translateY(-1px)',
+          },
+        },
       },
 
       animation: {
         slideFromTop: 'slideFromTop 0.3s ease-out',
+        littleBounce: 'littleBounce 1.25s ease-out infinite',
+        littleBounceDelayed: 'littleBounce 1.25s ease-out infinite 0.15s',
       },
     },
   },
