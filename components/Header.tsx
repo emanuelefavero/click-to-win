@@ -13,7 +13,7 @@ export default async function Component() {
     <header className='w-full flex items-center justify-between mb-16'>
       <form action={refreshHomePage}>
         <InvisibleButton type='submit'>
-          <Logo width={33} height={33} />
+          <Logo width={33} height={33} className='-translate-x-2' />
         </InvisibleButton>
       </form>
 
