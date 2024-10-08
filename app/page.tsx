@@ -1,6 +1,7 @@
 import Header from '@/components/Header'
-import Counter from '@/components/Counter'
 import Main from '@/components/Main'
+import Title from '@/components/Title'
+import Counter from '@/components/Counter'
 import Modal from '@/components/WinModal'
 import Confetti from '@/components/Confetti'
 
@@ -15,6 +16,7 @@ export default function Home({ searchParams }: SearchParamProps) {
     <>
       <Header />
       <Main>
+        <Title />
         <Counter />
       </Main>
 
