@@ -27,3 +27,9 @@ export async function incrementCount() {
     redirect('/')
   }
 }
+
+// Refresh the page
+export async function refreshHomePage() {
+  revalidatePath('/')
+  redirect('/')
+}
