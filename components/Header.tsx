@@ -4,6 +4,7 @@ import Greet from '@/components/Greet'
 import { currentUser } from '@clerk/nextjs/server'
 import { refreshHomePage } from '@/app/actions'
 import Logo from './Logo'
+import InvisibleButton from './InvisibleButton'
 
 export default async function Component() {
   const user = await currentUser()
@@ -11,12 +12,9 @@ export default async function Component() {
   return (
     <header className='w-full flex items-center justify-between mb-16'>
       <form action={refreshHomePage}>
-        <button
-          type='submit'
-          className='p-0 bg-transparent border-none hover:bg-transparent'
-        >
+        <InvisibleButton type='submit'>
           <Logo width={33} height={33} />
-        </button>
+        </InvisibleButton>
       </form>
 
       {user && (
