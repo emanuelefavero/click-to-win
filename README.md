@@ -4,7 +4,7 @@ A click to win game built with Next.js, Clerk authentication and MongoDB where t
 
 ## Website
 
-- [Click to Win](https://click-to-win-coral.vercel.app/)
+- [justclick2win.com](https://www.justclick2win.com/)
 
 #### Mockup
 
