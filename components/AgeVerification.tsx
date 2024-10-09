@@ -5,14 +5,19 @@ export default function Component() {
   async function yes() {
     'use server'
 
-    cookies().set('isOver18', 'true')
+    cookies().set('isOver18', 'true', {
+      // Expires in 2 years
+      maxAge: 60 * 60 * 24 * 365 * 2, // 2 years in seconds
+    })
     redirect('/')
   }
 
   async function no() {
     'use server'
 
-    cookies().set('isOver18', 'false')
+    cookies().set('isOver18', 'false', {
+      maxAge: 0, // delete the cookie immediately
+    })
     redirect('https://google.com')
   }
 
