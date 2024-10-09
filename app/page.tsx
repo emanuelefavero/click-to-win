@@ -1,3 +1,4 @@
+import { currentUser } from '@clerk/nextjs/server'
 import { redirect } from 'next/navigation'
 import { cookies } from 'next/headers'
 import Header from '@/components/Header'
@@ -11,11 +12,12 @@ interface SearchParamProps {
   searchParams: Record<string, string> | null | undefined
 }
 
-export default function Home({ searchParams }: SearchParamProps) {
+export default async function Home({ searchParams }: SearchParamProps) {
+  const user = await currentUser()
   const cookieStore = cookies()
-  const isOver18 = cookieStore.get('isOver18')?.value
+  const isOver18 = cookieStore.get('isOver18')?.value === 'true'
 
-  if (isOver18 !== 'true') redirect('/age-verification')
+  if (user && !isOver18) redirect('/age-verification')
 
   const win = searchParams?.win
 
