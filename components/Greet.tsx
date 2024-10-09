@@ -8,7 +8,7 @@ export default async function Component() {
   return (
     <span className='mr-3 font-semibold select-none text-base'>
       <span className='hidden 3xs:inline'>Hello, </span>
-      <span className='hidden 4xs:inline'>{user.firstName}</span>
+      <span className='hidden 3xs:inline'>{user.firstName}</span>
     </span>
   )
 }
