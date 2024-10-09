@@ -1,5 +1,6 @@
 import { redirect } from 'next/navigation'
 import { cookies } from 'next/headers'
+import SubmitButton from '@/components/SubmitButton'
 
 export default function Component() {
   async function yes() {
@@ -23,17 +24,21 @@ export default function Component() {
 
   return (
     <>
-      <h2 className='text-3xl font-bold select-none mb-7'>
+      <h2 className='text-3xl font-bold select-none mb-7 text-center'>
         Are you 18 or older?
       </h2>
 
-      <div className='flex gap-3'>
+      <div className='flex justify-center items-center flex-wrap gap-x-3 gap-y-2'>
         <form action={yes}>
-          <button type='submit'>Yes - Enter</button>
+          <SubmitButton className='text-lg 4xs:min-w-[7.5rem]'>
+            Yes<span className='hidden 4xs:inline'> - Enter</span>
+          </SubmitButton>
         </form>
 
         <form action={no}>
-          <button type='submit'>No - Exit</button>
+          <SubmitButton className='text-lg 4xs:min-w-[7.5rem]'>
+            No<span className='hidden 4xs:inline'> - Exit</span>
+          </SubmitButton>
         </form>
       </div>
     </>
