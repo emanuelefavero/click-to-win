@@ -1,6 +1,7 @@
 import { redirect } from 'next/navigation'
 import { cookies } from 'next/headers'
 import SubmitButton from '@/components/SubmitButton'
+import SubmitButtonMuted from '@/components/SubmitButtonMuted'
 
 export default function Component() {
   async function yes() {
@@ -36,9 +37,9 @@ export default function Component() {
         </form>
 
         <form action={no}>
-          <SubmitButton className='text-lg 4xs:min-w-[7.5rem]'>
+          <SubmitButtonMuted className='text-lg 4xs:min-w-[7.5rem]'>
             No<span className='hidden 4xs:inline'> - Exit</span>
-          </SubmitButton>
+          </SubmitButtonMuted>
         </form>
       </div>
     </>
