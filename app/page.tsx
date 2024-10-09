@@ -1,3 +1,5 @@
+import { redirect } from 'next/navigation'
+import { cookies } from 'next/headers'
 import Header from '@/components/Header'
 import Main from '@/components/Main'
 import Title from '@/components/Title'
@@ -10,6 +12,11 @@ interface SearchParamProps {
 }
 
 export default function Home({ searchParams }: SearchParamProps) {
+  const cookieStore = cookies()
+  const isOver18 = cookieStore.get('isOver18')?.value
+
+  if (isOver18 !== 'true') redirect('/age-verification')
+
   const win = searchParams?.win
 
   return (
@@ -21,7 +28,6 @@ export default function Home({ searchParams }: SearchParamProps) {
       </Main>
 
       {win && <Modal />}
-
       {win && <Confetti />}
     </>
   )
