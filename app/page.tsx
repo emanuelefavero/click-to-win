@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { currentUser } from '@clerk/nextjs/server'
 import { redirect } from 'next/navigation'
 import { cookies } from 'next/headers'
@@ -31,6 +32,12 @@ export default async function Home({ searchParams }: SearchParamProps) {
 
       {win && <Modal />}
       {win && <Confetti />}
+
+      <footer className='flex justify-center'>
+        <Link href='/privacy-policy' className='text-sm'>
+          Privacy Policy
+        </Link>
+      </footer>
     </>
   )
 }

@@ -7,7 +7,9 @@ interface Props {
 
 export default function Component({ children, className }: Props) {
   return (
-    <main className={`flex justify-center items-center flex-col ${className}`}>
+    <main
+      className={`flex justify-center items-center flex-col mb-12 ${className}`}
+    >
       {children}
     </main>
   )
