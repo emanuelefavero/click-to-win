@@ -2,6 +2,7 @@ import { ClerkProvider } from '@clerk/nextjs'
 import { dark } from '@clerk/themes'
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
+import AdSense from '@/components/AdSense'
 import '@/app/globals.css'
 
 const geistSans = localFont({
@@ -38,6 +39,10 @@ export default function RootLayout({
       }}
     >
       <html lang='en'>
+        <head>
+          <AdSense />
+        </head>
+
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
