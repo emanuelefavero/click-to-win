@@ -8,6 +8,7 @@ import Title from '@/components/Title'
 import Counter from '@/components/Counter'
 import Modal from '@/components/WinModal'
 import Confetti from '@/components/Confetti'
+import AdSenseCustom from '@/components/AdSenseCustom'
 
 interface SearchParamProps {
   searchParams: Record<string, string> | null | undefined
@@ -38,6 +39,10 @@ export default async function Home({ searchParams }: SearchParamProps) {
           Privacy Policy
         </Link>
       </footer>
+
+      <div className='w-full px-4 mt-12 mb-10 min-h-60 flex justify-center items-center'>
+        <AdSenseCustom />
+      </div>
     </>
   )
 }
